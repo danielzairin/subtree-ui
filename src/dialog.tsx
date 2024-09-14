@@ -22,7 +22,11 @@ export const Dialog = forwardRef<DialogRef, DialogProps>((props, ref) => {
     close: () => dialogElementRef.current?.close(),
   }));
 
-  return <dialog ref={dialogElementRef}>{children}</dialog>;
+  return (
+    <dialog ref={dialogElementRef} style={{ maxWidth: "600px" }}>
+      {children}
+    </dialog>
+  );
 });
 
 export function useDialogRef() {
